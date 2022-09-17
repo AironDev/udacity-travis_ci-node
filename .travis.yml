@@ -15,9 +15,9 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node .
-  - docker tag simple-node airondev/simple-node:latest
+  - docker build -t udacity-travis_ci-node .
+  - docker tag simple-node airondev/udacity-travis_ci-node:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push YOUR_DOCKER_HUB/simple-node
+  - docker push airondev/udacity-travis_ci-noe
